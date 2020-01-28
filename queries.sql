@@ -25,13 +25,13 @@ select * from employee where department_id =20 and salary>500; --list the employ
 select * from employee where comm is null ; --list the employees who are not receiving commission
 
 -- order by clause
-select id_of_the_employee, last_name from employee order by id_of_the_employee ;
-select id_of_the_employee, last_name, salary from employee order by salary desc ;
-select * from employee order by last_name,salary desc ;
-select * from employee order by last_name,department_id desc ;
+select id_of_the_employee, last_name from employee order by id_of_the_employee ; --list the employee id who are working in different department wise in the rganisation
+select id_of_the_employee, last_name, salary from employee order by salary desc ; --list the employee id, name in descending order based on salary column
+select * from employee order by last_name,salary desc ; --list the employee id, name in descending order based on salary column and last name in ascending order
+select * from employee order by last_name,department_id desc ; -- list employee details according to their last name in ascending order and then on department id in desending order
 
 -- group by and having clause 
 select department_id from employee group by department_id  ;
-select min(salary), max(salary), avg(salary) from employee  group by department_id ;
-select min(salary), max(salary), avg(salary) from employee  group by job_id ;
+select min(salary), max(salary), avg(salary) from employee  group by department_id ; --list out the department wise maximum salary, minimum salary, average salary of the employees
+select min(salary), max(salary), avg(salary) from employee  group by job_id ; --list out the job wise maximum salary, minimum salary, average salary of the employees
 select count(id_of_the_employee) from employee group by hire_date ;
