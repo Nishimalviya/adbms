@@ -1,11 +1,11 @@
 -- simple queries
-select * from employee;
-select * from department;
-select * from job;
-select * from locations;
-select first_name, last_name, salary, comm from employee;
-select employee_id, last_name, department_id from employee;
-ALTER TABLE employee RENAME COLUMN employee_id TO id_of_the_employee;
+select * from employee; --list all employee details
+select * from department; --list all the department details
+select * from job; --list all job details
+select * from locations; --list all location details
+select first_name, last_name, salary, comm from employee; --list name, salary, commission for all employees
+select employee_id, last_name, department_id from employee; --list employee id, last name, commission for all employees
+ALTER TABLE employee RENAME COLUMN employee_id TO id_of_the_employee; --rename employee id as id of the employee
 select first_name, last_name, salary from employee;
 select * from employee where first_name='Smith' ;
 select * from employee where last_name='Smith' ;
