@@ -21,7 +21,7 @@ insert into job values(670,'Sales');
 -- employee table
 insert into employee values (7369,'Smith','John','Q',667,7902,'17-dec-84',800,null,20);
 insert into employee values (7499,'Allen','Kevin','J',670,7698,'20-feb-85',1600,300,30);
-insert into employee values (7369,'Doyle','Jean','K',661,7839,'04-apr-85',2850,null,30);
-insert into employee values (7369,'Dennis','Lynn','S',671,7839,'15-may-85',2750,null,30);
-insert into employee values (7369,'Baker','Leslie','D',671,7839,'10-jun-85',2200,null,40);
-insert into employee values (7369,'Wark','Cynthia','D',670,7698,'22-feb-85',1250,500,30);
+insert into employee values (7505,'Doyle','Jean','K',661,7839,'04-apr-85',2850,null,30);
+insert into employee values (7506,'Dennis','Lynn','S',671,7839,'15-may-85',2750,null,30);
+insert into employee values (7507,'Baker','Leslie','D',671,7839,'10-jun-85',2200,null,40);
+insert into employee values (7521,'Wark','Cynthia','D',670,7698,'22-feb-85',1250,500,30);
