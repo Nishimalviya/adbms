@@ -30,3 +30,4 @@ select * from employee order by last_name,department_id desc ;
 select department_id from employee group by department_id  ;
 select min(salary), max(salary), avg(salary) from employee  group by department_id ;
 select min(salary), max(salary), avg(salary) from employee  group by job_id ;
+select count(id_of_the_employee) from employee group by hire_date ;
