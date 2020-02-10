@@ -38,6 +38,13 @@ select min(salary), max(salary), avg(salary) from employee  group by job_id ; --
 select count(extract(month from hire_date)) from employee group by extract(month from hire_date); --list number of employee joined in every month
 select count(extract(month from hire_date)) from employee group by extract(month from hire_date) order by count(extract(month from hire_date));--list number of employee joined in every month in ascending order
 select count(extract(year from hire_date)) from employee group by extract(year from hire_date) order by count(extract(year from hire_date));--list number of employee joined in every month and year in ascending order
-
+SELECT department_id, COUNT(*) FROM employee GROUP BY department_id having count(*)>=4; --department having at least 4 employees
+select count(extract(month from hire_date)) from employee where hire_date between '01-feb-85' and '28-feb-85' group by extract(month from hire_date); --no of employees joined in february
+select count(extract(year from hire_date)) from employee where hire_date between '01-jan-85' and '31-dec-85' group by extract(year from hire_date); -- employees joined in year 1985 
+select count(extract(month from hire_date)) from employee where hire_date between '01-jan-85' and '31-dec-85' group by extract(month from hire_date); -- no of employees joied every month in 1985
+SELECT department_id, COUNT(*) FROM employee where hire_date between '01-feb-85' and '28-feb-85' GROUP BY department_id having count(*)>=2; -- department having gretaer than or equal to 2 employees joined in february
+                     
+                                                                                                                      
+                                                                               
 
 
