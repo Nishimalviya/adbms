@@ -19,7 +19,7 @@ create table job(
     mid_name char(1) not null,
     job_id int not null,
     manager_id int not null,
-    hire_date varchar(10) not null,
+    hire_date date,
     salary int not null,
     comm int,
     department_id int not null,
