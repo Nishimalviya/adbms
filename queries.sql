@@ -51,3 +51,5 @@ UPDATE employee set salary= salary + (salary * 10 / 100) where job_id = (select 
 DELETE FROM employee WHERE department_id=(select department_id from department where dept_name='Research'); -- delete employee in research dept
 SELECT MAX(salary) FROM employee WHERE salary NOT IN ( SELECT Max(salary) FROM employee); --second max salary
 SELECT * FROM employee e1 WHERE 3-1 = (SELECT COUNT(DISTINCT salary) FROM employee e2 WHERE e2.salary > e1.salary); --3rd max salary (nth)
+SELECT * FROM employee WHERE salary > ALL (SELECT salary FROM employee WHERE department_id=40); --salary greater than employee of dept 40
+SELECT * FROM employee WHERE salary > Any (SELECT min(salary) FROM employee);
