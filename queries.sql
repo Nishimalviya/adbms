@@ -43,7 +43,9 @@ select count(extract(month from hire_date)) from employee where hire_date betwee
 select count(extract(year from hire_date)) from employee where hire_date between '01-jan-85' and '31-dec-85' group by extract(year from hire_date); -- employees joined in year 1985 
 select count(extract(month from hire_date)) from employee where hire_date between '01-jan-85' and '31-dec-85' group by extract(month from hire_date); -- no of employees joied every month in 1985
 SELECT department_id, COUNT(*) FROM employee where hire_date between '01-feb-85' and '28-feb-85' GROUP BY department_id having count(*)>=2; -- department having gretaer than or equal to 2 employees joined in february
-                     
+select last_name from employee where salary=(select max(salary) from employee); --max salary of employee
+select last_name from employee where department_id = (select department_id from department where dept_name='research') ; --employee working in research department
+select last_name from employee where job_id = (select job_id from job where function='Manager') ; --employee working as manager                   
                                                                                                                       
                                                                                
 
