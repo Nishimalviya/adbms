@@ -44,9 +44,10 @@ select count(extract(year from hire_date)) from employee where hire_date between
 select count(extract(month from hire_date)) from employee where hire_date between '01-jan-85' and '31-dec-85' group by extract(month from hire_date); -- no of employees joied every month in 1985
 SELECT department_id, COUNT(*) FROM employee where hire_date between '01-feb-85' and '28-feb-85' GROUP BY department_id having count(*)>=2; -- department having gretaer than or equal to 2 employees joined in february
 select last_name from employee where salary=(select max(salary) from employee); --max salary of employee
-select last_name from employee where department_id = (select department_id from department where dept_name='research') ; --employee working in research department
+select last_name from employee where department_id = (select department_id from department where dept_name='Sales') ; --employee working in research department
 select last_name from employee where job_id = (select job_id from job where function='Manager') ; --employee working as manager                   
-                                                                                                                      
-                                                                               
-
-
+select count(*) from employee where department_id = (select department_id from department where dept_name='Sales');-- number of employees working in sales dept                                                                                                                      
+UPDATE employee set salary= salary + (salary * 10 / 100) where job_id = (select job_id from job where function='Manager'); -- update manager salary by 10%                                                                               
+DELETE FROM employee WHERE department_id=(select department_id from department where dept_name='Research'); -- delete employee in research dept
+SELECT MAX(salary) FROM employee WHERE salary NOT IN ( SELECT Max(salary) FROM employee); --second max salary
+SELECT * FROM employee e1 WHERE 3-1 = (SELECT COUNT(DISTINCT salary) FROM employee e2 WHERE e2.salary > e1.salary); --3rd max salary (nth)
